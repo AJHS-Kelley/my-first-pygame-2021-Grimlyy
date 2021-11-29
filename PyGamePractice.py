@@ -1,4 +1,4 @@
-# Pygame Practice, Alan Andreoni, 11/29/2021 8:35 am, v0.4
+# Pygame Practice, Alan Andreoni, 11/29/2021 8:35 am, v0.5
 
 import pygame, sys
 from pygame.locals import *
@@ -20,8 +20,12 @@ BLUE = (0, 0, 255)
 # Setup Fonts
 basicFont = pygame.font.SysFont(None, 48)
 
-#Setup Text
+# Setup Text
 text = basicFont.render('Hello, World!', True, WHITE, BLUE)
 textRect = text.get_rect()
 textRect.centerx = windowSurface.get_rect().centerx
 textRect.centery = windowSurface.get_rect().centery
+
+# Draw background onto window surface
+windowSurface.fill(WHITE)
+
