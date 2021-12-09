@@ -1,4 +1,4 @@
-# Simple Animation with Pygame, Alan Andreoni, 12/8/2021, 9:03 am v0.8
+# Simple Animation with Pygame, Alan Andreoni, 12/8/2021, 9:11 am v0.9
 
 
 import pygame, sys, time
@@ -62,13 +62,13 @@ while True:
         if b['rect'].top < 0:
             # the box has moved past the top.
             if b['dir'] == UPLEFT:
-                b['dir'] == DOWNLEFT
+                b['dir'] = DOWNLEFT
             if b['dir'] == UPRIGHT:
-                b['dir'] == DOWNRIGHT
-            if b['rect'].bottom > WINDOWHEIGHT:
-                # the box has moved past the bottom.
-                if b['dir'] == DOWNLEFT:
-                    b['dir'] = UPLEFT
+                b['dir'] = DOWNRIGHT
+        if b['rect'].bottom > WINDOWHEIGHT:
+            # the box has moved past the bottom.
+            if b['dir'] == DOWNLEFT:
+                b['dir'] = UPLEFT
             if b['dir'] == DOWNRIGHT:
                 b['dir'] = UPRIGHT
         if b['rect'].left < 0:
@@ -77,11 +77,11 @@ while True:
                 b['dir'] = DOWNRIGHT
             if b['dir'] == UPLEFT:
                 b['dir'] = UPRIGHT
-            if['rect'].right > WINDOWWIDTH:
-                # The box has moved past the right.
-                if b['dir'] == DOWNRIGHT:
+        if b['rect'].right > WINDOWWIDTH:
+            # The box has moved past the right.
+            if b['dir'] == DOWNRIGHT:
                     b['dir'] = DOWNLEFT
-                if b['dir'] == UPRIGHT:
+            if b['dir'] == UPRIGHT:
                     b['dir'] = UPLEFT
 
         # Draw the box onto the game surface
