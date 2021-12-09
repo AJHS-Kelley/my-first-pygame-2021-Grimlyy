@@ -1,4 +1,4 @@
-# Simple Animation with Pygame, Alan Andreoni, 12/8/2021, 9:00 am v0.7
+# Simple Animation with Pygame, Alan Andreoni, 12/8/2021, 9:03 am v0.8
 
 
 import pygame, sys, time
@@ -84,3 +84,11 @@ while True:
                 if b['dir'] == UPRIGHT:
                     b['dir'] = UPLEFT
 
+        # Draw the box onto the game surface
+        pygame.draw.rect(windowSurface, b['color'], b['rect'])
+
+    # Draw the window to the screen
+    pygame.display.update()
+    time.sleep(0.02)
+
+    
