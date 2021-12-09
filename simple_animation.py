@@ -1,11 +1,11 @@
 # Simple Animation with Pygame, Alan Andreoni, 12/8/2021, 7:29 pm v0.6
 
-from PyGamePractice import GREEN
+
 import pygame, sys, time
 from pygame.locals import *
 
 # Setup Pygame
-pygame.innit()
+pygame.init()
 
 # Setup the window
 WINDOWWIDTH = 400
@@ -57,5 +57,7 @@ while True:
         if b['dir'] == UPRIGHT:
             b['rect'].left += MOVESPEED
             b['rect'].top -= MOVESPEED
+
+            
 
         
