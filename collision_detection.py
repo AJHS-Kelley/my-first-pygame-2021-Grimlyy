@@ -1,5 +1,6 @@
-#Pygame Collision Dection Practice, Alan Andreoni, 1/7/22 6:32 pm, v0.5
+#Pygame Collision Dection Practice, Alan Andreoni, 1/7/22 6:42 pm, v0.6
 
+from _typeshed import _KT_contra
 import pygame, sys, random
 from pygame.locals import *
 
@@ -35,3 +36,30 @@ moveUp = False
 moveDown = False
 
 MOVESPEED = 6
+
+# Run the game loop.
+while True:
+    # Check for events.
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == KEYDOWN:
+            # Change the keybaord varibales.
+            if event.key == K_LEFT or event.ley == K_a:
+                moveRight = False
+                moveLeft = True
+            if event.key == K_RIGHT or event.key == K_d:
+                moveLeft = False
+                moveRight = True
+            if event.key == K_UP or event.key == K_w:
+                moveDown = False
+                moveUp = True
+            if event.key == K_DOWN or event.key == K_s:
+                moveUp = False
+                moveDown = True
+
+
+
+
+
