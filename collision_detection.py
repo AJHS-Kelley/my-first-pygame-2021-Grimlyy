@@ -1,4 +1,4 @@
-#Pygame Collision Dection Practice, Alan Andreoni, 1/7/22 6:42 pm, v0.6
+#Pygame Collision Dection Practice, Alan Andreoni, 1/7/22 6:52 pm, v0.7
 
 from _typeshed import _KT_contra
 import pygame, sys, random
@@ -58,8 +58,21 @@ while True:
             if event.key == K_DOWN or event.key == K_s:
                 moveUp = False
                 moveDown = True
-
-
-
+        if event.type == KEYUP:
+            if event.key == K_ESCAPE:
+                pygame.quit()
+                sys.exit()
+            # Check to see if the player has stopped moving.
+            if event.key == K_LEFT or event.ley == K_a:
+                moveLeft = False
+            if event.key == K_RIGHT or event.key == K_d:
+                moveRight = False
+            if event.key == K_UP or event.key == K_w:
+                moveUp = False
+            if event.key == K_DOWN or event.key == K_s:
+                moveDown = False
+            if event.key == K_x: # Use x to teleport player
+                player.top = random.randint(0, WINDOWHEIGHT - player.height)
+                player.left = random.randint(0, WINDOWWIDTH - player.width)
 
 
