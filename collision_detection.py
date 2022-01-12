@@ -1,4 +1,4 @@
-#Pygame Collision Dection Practice, Alan Andreoni, 1/7/22 6:52 pm, v0.7
+#Pygame Collision Dection Practice, Alan Andreoni, 1/12/22 6:55 pm, v0.8
 
 from _typeshed import _KT_contra
 import pygame, sys, random
@@ -74,5 +74,9 @@ while True:
             if event.key == K_x: # Use x to teleport player
                 player.top = random.randint(0, WINDOWHEIGHT - player.height)
                 player.left = random.randint(0, WINDOWWIDTH - player.width)
+
+        if event.type == MOUSEBUTTONUP:
+            foods.append(pygame.Rect(event.pos[0], event.pos[1], FOODSIZE, FOODSIZE))
+
 
 
