@@ -1,4 +1,4 @@
-#Pygame Collision Dection Practice, Alan Andreoni, 1/12/22 6:55 pm, v0.8
+#Pygame Collision Dection Practice, Alan Andreoni, 1/12/22 7:00 pm, v0.9
 
 from _typeshed import _KT_contra
 import pygame, sys, random
@@ -77,6 +77,14 @@ while True:
 
         if event.type == MOUSEBUTTONUP:
             foods.append(pygame.Rect(event.pos[0], event.pos[1], FOODSIZE, FOODSIZE))
+
+    foodcounter += 1
+    if foodcounter => NEWFOOD:
+        # Add new food.
+        foodCounter = 0
+        foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH = FOODSIZE), FOODSIZE, FOODSIZE))
+
+    # Draw white backgroound on Window Surface.
 
 
 
