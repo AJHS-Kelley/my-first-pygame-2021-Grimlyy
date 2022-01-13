@@ -1,4 +1,4 @@
-#Pygame Collision Dection Practice, Alan Andreoni, 1/12/22 7:43 pm, v1.1
+#Pygame Collision Dection Practice, Alan Andreoni, 1/12/22 7:52 pm, v1.1a BUGFIX UPDATE
 
 from _typeshed import _KT_contra
 import pygame, sys, random
@@ -79,7 +79,7 @@ while True:
             foods.append(pygame.Rect(event.pos[0], event.pos[1], FOODSIZE, FOODSIZE))
 
     foodcounter += 1
-    if foodcounter => NEWFOOD:
+    if foodcounter >= NEWFOOD:
         # Add new food.
         foodCounter = 0
         foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH = FOODSIZE), FOODSIZE, FOODSIZE))
