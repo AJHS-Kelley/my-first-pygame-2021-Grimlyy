@@ -85,6 +85,7 @@ while True:
         foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH = FOODSIZE), FOODSIZE, FOODSIZE))
 
     # Draw white backgroound on Window Surface.
+    windowSurface.fill(WHITE)
 
 
 
