@@ -1,4 +1,4 @@
-#Pygame Collision Dection Practice, Alan Andreoni, 1/12/22 7:00 pm, v0.9
+#Pygame Collision Dection Practice, Alan Andreoni, 1/12/22 7:43 pm, v1.1
 
 from _typeshed import _KT_contra
 import pygame, sys, random
@@ -86,6 +86,29 @@ while True:
 
     # Draw white backgroound on Window Surface.
     windowSurface.fill(WHITE)
+
+    # Move the player.
+    if moveDown and player.buttom < WINDOWHEIGHT:
+        player.loop += MOVESPEED
+    if moveUp and player.top > 0:
+        player.top -= MOVESPEED
+    if moveLeft and player.left > 0:
+        player.left -= MOVESPEED
+    if moveRight and player.right < WINDOWWIDTH:
+        player.right += MOVESPEED
+
+    # Draw the player on the surface.
+    pygame.draw.rect(windowSurface, BLACK, player)
+
+    # Check for player colliding with food(s).
+    for food in foods[:]:
+        if player.colliderect(food):
+            food.remove(food)
+
+    # Draw the food.
+    for i in range(len(foods)):
+        pygame.draw.rect(windowSurface, GREEN, foods[i])
+
 
 
 
