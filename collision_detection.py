@@ -1,6 +1,5 @@
-#Pygame Collision Dection Practice, Alan Andreoni, 1/12/22 7:52 pm, v1.1a BUGFIX UPDATE
+#Pygame Collision Dection Practice, Alan Andreoni, 1/15/22 12:15 pm, v2.0
 
-from _typeshed import _KT_contra
 import pygame, sys, random
 from pygame.locals import *
 
@@ -11,7 +10,7 @@ mainClock = pygame.time.Clock()
 # Setup the PyGame Window
 WINDOWWIDTH= 400
 WINDOWHEIGHT = 400
-windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0 32)
+windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
 pygame.display.set_caption('Collision Detection 2022')
 
 # Setup colors.
@@ -109,6 +108,9 @@ while True:
     for i in range(len(foods)):
         pygame.draw.rect(windowSurface, GREEN, foods[i])
 
+    # Draw the window to the screen.
+    pygame.display.update()
+    mainClock.tick(40)  
 
 
 
